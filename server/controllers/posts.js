@@ -30,10 +30,19 @@ export const createPost = async (req,res) => {
 }
 
 /* READ */
-export const getFeedPosts = async (req,res) => {
+export const getUsersPosts = async (req,res) => {
 	try {
 		const {userId} = req.params
 		const post = await Post.find({userId})
+		res.status(200).json(post)
+	} catch (error) {
+			res.status(404).json({massage: error.message})
+	}
+}
+export const getFeedPosts = async (req,res) => {
+	try {
+		
+		const post = await Post.find()
 		res.status(200).json(post)
 	} catch (error) {
 			res.status(404).json({massage: error.message})
