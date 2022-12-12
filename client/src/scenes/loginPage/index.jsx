@@ -16,12 +16,7 @@ const LoginPage = () => {
           fontWeight='bold'
           fontSize='32px'
           color='primary'
-          sx={{
-            "&:hover": {
-              color: primaryLight,
-              cursor: "pointer",
-            },
-          }}
+         
         >
           Socio
         </Typography>
