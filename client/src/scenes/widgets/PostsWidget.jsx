@@ -24,7 +24,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
         headers: { Authorization: `Bearer ${token}` },
       }
     );
-    const date = await response.json();
+    const data = await response.json();
     dispatch(setPosts({ posts: data }));
   };
   useEffect(() => {
@@ -46,7 +46,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
           description,
           location,
           picturePath,
-          userPicture,
+          userPicturePath,
           likes,
           comments,
         }) => (
